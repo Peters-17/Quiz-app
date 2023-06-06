@@ -1,0 +1,28 @@
+<!-- <div *ngIf="currentQuestionIndex < questions.length; else score">
+    <h1>{{ questions[currentQuestionIndex].question }}</h1>
+    <button *ngFor="let choice of questions[currentQuestionIndex].choices" (click)="submitAnswer(choice)">
+      {{ choice }}
+    </button>
+  </div>
+  <ng-template #score>
+    <h1>Your score is {{ getScore() }} out of {{ questions.length }}</h1>
+  </ng-template> -->
+  
+  <!-- elaborate -->
+
+  <div class="quiz-container" *ngIf="currentQuestionIndex < questions.length; else score">
+    <h2>Question {{currentQuestionIndex + 1}}</h2>
+    <h3>{{ questions[currentQuestionIndex].question }}</h3>
+    <div class="choices-container">
+      <button class="choice-btn" *ngFor="let choice of questions[currentQuestionIndex].choices" (click)="submitAnswer(choice)">
+        {{ choice }}
+      </button>
+    </div>
+  </div>
+  <ng-template #score>
+    <div class="score-container">
+      <h2>Your score is {{ getScore() }} out of {{ questions.length }}</h2>
+    </div>
+  </ng-template>
+  
+  
